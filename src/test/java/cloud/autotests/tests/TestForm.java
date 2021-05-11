@@ -17,7 +17,7 @@ public class TestForm extends TestBase {
     @Test
     @Severity(NORMAL)
     @Feature("SberHealh")
-    @DisplayName("Проверка поиска и магазина")
+    @DisplayName("Проверка поиска")
     void fillForm() {
         String  site = "https://sberhealth.ru/",
                 doctor = "Кардиолог",
