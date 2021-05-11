@@ -13,7 +13,6 @@ https://sberhealth.ru
 
 `Java` `Gradle` `Junit5` `Selenide` `Selenoid` `Allure Report` `Jenkins` `Telegram Bot`
 
-
 # Отчет Allure report:
 ![Allure](src/test/resources/images/allure1.png)
 ![Allure](src/test/resources/images/allure2.png)
