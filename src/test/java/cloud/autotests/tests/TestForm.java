@@ -19,11 +19,12 @@ public class TestForm extends TestBase {
     @Feature("SberHealh")
     @DisplayName("Проверка поиска и магазина")
     void fillForm() {
-        String  doctor = "Кардиолог",
+        String  site = "https://sberhealth.ru/",
+                doctor = "Кардиолог",
                 metro = "Курская";
 
         step("Открываем сайт", () -> {
-            open("https://sberhealth.ru/");
+            open(site);
         });
 
         step("Проверка что сайт открылся", () -> {
