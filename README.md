@@ -12,16 +12,16 @@ https://sberhealh.ru
 ![Jenkins](src/test/resources/images/icons/Jenkins.png)
 ![Telegram](src/test/resources/images/icons/Telegram.png)
 
-### отчет Allure report
+## отчет Allure report
 ![Allure](src/test/resources/images/allure1.png)
 ![Allure](src/test/resources/images/allure2.png)
 ![Allure](src/test/resources/images/allure3.png)
 
-### Видео теста 
+## Видео теста 
+![Video](src/test/resources/video.mp4)
 
-
-### ссылка на проект в Jenkins
-https://jenkins.autotests.cloud/job/c05-Nemond-hw11-findwork/
-
-### сообщение отправленное в Telegram
+## сообщение отправленное в Telegram
 ![Telegram](src/test/resources/images/telegram.png)
+
+## ссылка на проект в Jenkins
+https://jenkins.autotests.cloud/job/c05-Nemond-hw11-findwork/
