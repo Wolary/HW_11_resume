@@ -12,6 +12,16 @@ https://sberhealh.ru
 ![Jenkins](src/test/resources/images/icons/Jenkins.png)
 ![Telegram](src/test/resources/images/icons/Telegram.png)
 
+    Java
+    Gradle
+    Junit5
+    Selenide
+    Selenoid
+    Allure Report
+    Jenkins
+    Telegram Bot
+
+
 ## отчет Allure report
 ![Allure](src/test/resources/images/allure1.png)
 ![Allure](src/test/resources/images/allure2.png)
