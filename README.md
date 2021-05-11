@@ -20,7 +20,7 @@ https://sberhealh.ru
 ![Allure](src/test/resources/images/allure2.png)
 ![Allure](src/test/resources/images/allure3.png)
 
-## Видео теста 
+## Видео прохождения теста 
 ![Video](src/test/resources/video.gif)
 
 ## сообщение отправленное в Telegram
