@@ -14,16 +14,16 @@ https://sberhealth.ru
 `Java` `Gradle` `Junit5` `Selenide` `Selenoid` `Allure Report` `Jenkins` `Telegram Bot`
 
 
-## Отчет Allure report
+# Отчет Allure report:
 ![Allure](src/test/resources/images/allure1.png)
 ![Allure](src/test/resources/images/allure2.png)
 ![Allure](src/test/resources/images/allure3.png)
 
-## Видео прохождения теста 
+# Видео прохождения теста:
 ![Video](src/test/resources/images/video.gif)
 
-## Cообщение, отправленное в Telegram
+# Cообщение, отправленное в Telegram:
 ![Telegram](src/test/resources/images/telegram.png)
 
-## Ссылка на проект в Jenkins
+# Ссылка на проект в Jenkins:
 https://jenkins.autotests.cloud/job/c05-Nemond-hw11-findwork/
