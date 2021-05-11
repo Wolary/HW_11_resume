@@ -2,7 +2,6 @@
 https://sberhealth.ru
 
 # Используемые технологии:
-
 ![Java](src/test/resources/images/icons/Java.png)
 ![Gradle](src/test/resources/images/icons/Gradle.png)
 ![JUnit5](src/test/resources/images/icons/JUnit5.png)
@@ -15,7 +14,7 @@ https://sberhealth.ru
 `Java` `Gradle` `Junit5` `Selenide` `Selenoid` `Allure Report` `Jenkins` `Telegram Bot`
 
 
-## отчет Allure report
+## Отчет Allure report
 ![Allure](src/test/resources/images/allure1.png)
 ![Allure](src/test/resources/images/allure2.png)
 ![Allure](src/test/resources/images/allure3.png)
@@ -23,8 +22,8 @@ https://sberhealth.ru
 ## Видео прохождения теста 
 ![Video](src/test/resources/images/video.gif)
 
-## сообщение отправленное в Telegram
+## Cообщение, отправленное в Telegram
 ![Telegram](src/test/resources/images/telegram.png)
 
-## ссылка на проект в Jenkins
+## Ссылка на проект в Jenkins
 https://jenkins.autotests.cloud/job/c05-Nemond-hw11-findwork/
