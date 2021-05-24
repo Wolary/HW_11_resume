@@ -74,58 +74,30 @@ public class TestForm extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка работы аптеки")
+    @DisplayName("Проверка работы консультации ветеринара")
     void openApteka() {
         step("Открываем сайт", () -> {
-            open(apteka);
+            open(site);
+        });
+        step("Открываем раздел ветеринария", () -> {
+            $(".med-service").$(byText("Ветеринария")).click();
         });
 
-        step("Проверка работы онлайн магазина", () -> {
-            $(".header__logo").shouldBe(visible);
+        step("Проверяем что кнопка заказа доступна", () -> {
+            switchTo().window(1);
+            $(".p11mj2ls__20210521131759").shouldBe(visible);
         });
     }
 
     @Test
-    @DisplayName("Проверка поиска в магазине")
+    @DisplayName("Проверка скрола")
     void checkFind() {
         step("Открываем сайт", () -> {
-            open(apteka);
+            open(site);
         });
 
-        step("Ищем товар по бренду", () -> {
-            $(byAttribute("href", "/goods/zootovary/")).click();
-            $(".filter__widget-inner").$(byText("Зоэтис")).click();
-        });
-
-        step("Проверяем что нашлось правильно", () -> {
-            $(byText("Бренды: Зоэтис")).shouldBe(visible);
-        });
-
-    }
-
-    @Test
-    @DisplayName("Проверка добавления товара в корзину")
-    void checkOrder() {
-        step("Открываем сайт", () -> {
-            open(apteka);
-        });
-
-        step("Ищем товар по бренду", () -> {
-            $(byAttribute("href", "/goods/zootovary/")).click();
-            $(".filter__widget-inner").$(byText("Зоэтис")).click();
-        });
-
-        step("Проверяем что нашлось правильно", () -> {
-            $(byText("Бренды: Зоэтис")).shouldBe(visible);
-        });
-
-        step("Добавляем товар в корзину", () -> {
-            $(".cc-item--group").find(byText("Купить")).click();
-        });
-
-        step("Проверяем товар в корзине", () -> {
-            $(byAttribute("href", "/personal/cart/")).click();
-            $(byAttribute("href", "/personal/order/make/")).shouldBe(visible);
+        step("Проверяем скролл", () -> {
+            $(".telemed-gift-banner__title").scrollTo();
         });
     }
 
