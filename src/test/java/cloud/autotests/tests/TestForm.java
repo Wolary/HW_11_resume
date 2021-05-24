@@ -14,28 +14,53 @@ import static io.qameta.allure.SeverityLevel.NORMAL;
 
 public class TestForm extends TestBase {
 
+    String site = "https://sberhealth.ru/",
+            apteka = "https://www.eapteka.ru/",
+            doctor = "Кардиолог",
+            metro = "Курская";
+
+
     @Test
     @Severity(NORMAL)
     @Feature("SberHealh")
-    @DisplayName("Проверка поиска")
-    void fillForm() {
-        String  site = "https://sberhealth.ru/",
-                doctor = "Кардиолог",
-                metro = "Курская";
+    @DisplayName("Проверяем что сайт открывается")
+    void openSite() {
 
         step("Открываем сайт", () -> {
             open(site);
         });
 
-        step("Проверка что сайт открылся", () -> {
+        step("Проверка что сайт открылся", () ->
+
+        {
             $(".help-to-get-better__title").shouldHave(text("Помогаем быть здоровыми"));
         });
+    }
 
-        step("Проверка QR кода для скачивания приложения", () -> {
-            $(".download-mobile-app__qr-code").shouldBe(visible);
+    @Test
+    @DisplayName("Проверяем QR коды")
+    void qrCode() {
+
+        step("Открываем сайт", () -> {
+            open(site);
         });
 
-        step("Проверка поиска врачей", () -> {
+        step("Проверка QR кода для скачивания приложения", () ->
+
+        {
+            $(".download-mobile-app__qr-code").shouldBe(visible);
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск врача")
+    void docSearch() {
+        step("Открываем сайт", () -> {
+            open(site);
+        });
+
+        step("Проверка поиска врачей", () ->
+        {
             $(".med-service").$(byText("Выбрать врача")).click();
             switchTo().window(1);
             $(".doctors-list-page-search-form").shouldHave(text("Запишитесь на приём к врачу онлайн"));
@@ -46,20 +71,62 @@ public class TestForm extends TestBase {
             $(".doctor-list-page").$(byText("Найти")).click();
             $(".doctor__near-metro-title").shouldHave(text("Врачи на м. " + metro));
         });
+    }
 
-//        step("Проверка работы онлайн магазина", () -> {
-//            switchTo().window(0);
-//            $(".med-service__container").find(byText("Онлайн-аптека")).click();
-//            switchTo().window(2);
-// почему то на удаленном драйвере не работает сайт eapteka.ru, жаль.
-//            $(byAttribute("href", "/goods/zootovary/")).click();
-//            $(".filter__widget-inner").$(byText("Зоэтис")).click();
-//            $(byText("Бренды: Зоэтис")).shouldBe(visible);
-//            $(".cc-item--group").find(byText("Купить")).click();
-//            $(byAttribute("href", "/personal/cart/")).click();
-//            $(byAttribute("href", "/personal/order/make/")).shouldBe(visible);
-//        });
+    @Test
+    @DisplayName("Проверка работы аптеки")
+    void openApteka() {
+        step("Открываем сайт", () -> {
+            open(apteka);
+        });
 
+        step("Проверка работы онлайн магазина", () -> {
+            $(".med-service__container").find(byText("Онлайн-аптека")).click();
+        });
+    }
+
+    @Test
+    @DisplayName("Проверка поиска в магазине")
+    void checkFind() {
+        step("Открываем сайт", () -> {
+            open(apteka);
+        });
+
+        step("Ищем товар по бренду", () -> {
+            $(byAttribute("href", "/goods/zootovary/")).click();
+            $(".filter__widget-inner").$(byText("Зоэтис")).click();
+        });
+
+        step("Проверяем что нашлось правильно", () -> {
+            $(byText("Бренды: Зоэтис")).shouldBe(visible);
+        });
+
+    }
+
+    @Test
+    @DisplayName("Проверка добавления товара в корзину")
+    void checkOrder() {
+        step("Открываем сайт", () -> {
+            open(apteka);
+        });
+
+        step("Ищем товар по бренду", () -> {
+            $(byAttribute("href", "/goods/zootovary/")).click();
+            $(".filter__widget-inner").$(byText("Зоэтис")).click();
+        });
+
+        step("Проверяем что нашлось правильно", () -> {
+            $(byText("Бренды: Зоэтис")).shouldBe(visible);
+        });
+
+        step("Добавляем товар в корзину", () -> {
+            $(".cc-item--group").find(byText("Купить")).click();
+        });
+
+        step("Проверяем товар в корзине", () -> {
+            $(byAttribute("href", "/personal/cart/")).click();
+            $(byAttribute("href", "/personal/order/make/")).shouldBe(visible);
+        });
     }
 
 }
