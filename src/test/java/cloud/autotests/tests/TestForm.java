@@ -81,7 +81,7 @@ public class TestForm extends TestBase {
         });
 
         step("Проверка работы онлайн магазина", () -> {
-            $(".med-service__container").find(byText("Онлайн-аптека")).click();
+            $(".header__logo").shouldBe(visible);
         });
     }
 
